@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="home-bg">
+
+    <div class="home-container">
+        <img src="/kle.jpg" class="Logo" alt="Portal Logo">
+        <h1 id="course-title">Course Details</h1>
+        
+        <div class="course-info"onclick="window.location.href='/dashboard.html'">
+            
+            <p id="course-description">Loading course details...</p>
+        </div>
+
+        <br>
+    
+    </div>
+
+    <script>
+        // Get the course name from the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseName = urlParams.get('course');
+
+        if (courseName) {
+            document.getElementById('course-title').innerText = courseName;
+            document.getElementById('course-description').innerText = `Welcome to the ${courseName} course page. Here you can find syllabus, notes, and assignments.`;
+        } else {
+            document.getElementById('course-description').innerText = "Course not found.";
+        }
+    </script>
+
+</body>
+
+</html>
